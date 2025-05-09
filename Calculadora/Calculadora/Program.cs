@@ -12,14 +12,23 @@ namespace Calculadora
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Seja Bem Vindo a Calculadora, selecione uma das opções:");
-            Console.WriteLine("1-Soma\n2-Subtração\n3-Divisão\n4-Multiplicação\n5-Potência\n6-Raiz\n7-Sair");
+            bool escolheuSair = false;
+            while (!escolheuSair)
+            {
+                Console.WriteLine("Seja Bem Vindo a Calculadora, selecione uma das opções:");
+                Console.WriteLine("1-Soma\n2-Subtração\n3-Divisão\n4-Multiplicação\n5-Potência\n6-Raiz\n7-Sair");
 
-            Menu opcao = (Menu)int.Parse(Console.ReadLine());
+                Menu opcao = (Menu)int.Parse(Console.ReadLine());
 
-            Console.WriteLine(opcao);
+                switch(opcao)
+                {
+                    case Menu.Sair:
+                        escolheuSair = true;
+                        break;
+                }
 
-            Console.ReadLine();
+                Console.Clear();
+            }
         }
     }
 }
